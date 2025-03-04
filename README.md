@@ -1,1 +1,1 @@
-# GreetingAppilcation
+# GreetingApp
