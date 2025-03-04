@@ -59,6 +59,13 @@ public class GreetingController {
         return greetingService.getAllGreetings();
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<Greeting> addGreeting(@RequestBody Greeting greeting) {
+        Greeting savedGreeting = greetingService.saveGreeting(greeting);
+        return ResponseEntity.ok(savedGreeting);
+    }
+
+
     @PutMapping("/update/{id}")
     public Greeting updateGreeting(@PathVariable Long id, @RequestBody Greeting updatedGreeting) {
         return greetingService.updateGreetingMessage(id, updatedGreeting.getMessage());
